@@ -1,4 +1,5 @@
 import 'package:custom_inherited_widget_example/home/home_page.dart';
+import 'package:custom_inherited_widget_example/model/user_model.dart';
 import 'package:custom_inherited_widget_example/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 
@@ -12,12 +13,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter InheritWidget Demo',
-      routes: {
-        '/': (_) => const SplashPage(),
-        '/home': (_) => const HomePage(),
-      },
+    return UserModel(
+      name: 'Lucas Beraldo',
+      child: MaterialApp(
+        title: 'Flutter InheritWidget Demo',
+        routes: {
+          '/': (_) => const SplashPage(),
+          '/home': (_) => const HomePage(),
+        },
+      ),
     );
   }
 }
