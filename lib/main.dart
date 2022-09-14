@@ -1,3 +1,5 @@
+import 'package:custom_inherited_widget_example/home/home_page.dart';
+import 'package:custom_inherited_widget_example/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter InheritWidget Demo',
-      home: Container(),
+      routes: {
+        '/': (_) => const SplashPage(),
+        '/home': (_) => const HomePage(),
+      },
     );
   }
 }
